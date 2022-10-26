@@ -36,8 +36,8 @@ elif RUN_MODE == 'testing':
 db = SQLAlchemy(app)
 # setup migration
 migrate = Migrate(app, db)
-# setup cors
-cors = CORS(app, resources={"r*/api/*": {"origins": "*"}})
+# setup cors for api routes 
+cors = CORS(app, resources={r"/api/*": {"CORS_ORIGINS": "*"}})
 
 # Import a module / component using its blueprint handler variable
 from .user.controllers import user_bp as user_blueprint
